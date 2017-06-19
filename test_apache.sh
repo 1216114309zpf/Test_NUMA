@@ -20,6 +20,7 @@ node=0
 
 for((i=0;i<32;++i))
 do
+  node=`$i / 8`
   ssh root@192.168.1.125   virsh vcpupin 16 0 $i
   ssh root@192.168.1.125   virsh numatune new-ellis --nodeset $node
 
